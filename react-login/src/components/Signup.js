@@ -15,10 +15,15 @@ import Navbar from './Navbar';
     try {
       const res = await axios.post("http://localhost:8000/signup", { email, password });
 
-      if (res.data = "exist") {
+      if (!email || !password) {
+        alert("Please Enter Email & Password.");
+        return; // Stop execution if email or password are missing
+    }
+      else if (res.data === "exist") {
         alert("User already exists");
-      } else if (res.data = "notexist") {
-        history("/home", { state: { id: email } });
+      } else if (res.data === "notexist") {
+        history("/", { state: { id: email } });
+        alert("User signup successfully");
       }
     } catch (error) {
       alert("Wrong details");

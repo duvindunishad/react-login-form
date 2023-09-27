@@ -14,23 +14,30 @@ const Login = () => {
   async function submit(e){
     e.preventDefault();
     try {
-        await axios.post("http://localhost:8000/",{password,email})
-        .then(res=>{
-            if(res.data="exsit"){
-                history("/home",{state:{id:email}})
-            }
-            else if(res.data="notexsit"){
-                alert("user have not signup")
-            }
-        })
-        .catch(e=>{
-            alert("wrong details")
-            console.log(e)
-        })
+        if (!email || !password) {
+            alert("Email and password are required.");
+            return; // Stop execution if email or password are missing
+        }
+    
+        // Add email and password to the request
+        const data = { email, password };
+    
+        await axios.post("http://localhost:8000/", data)
+            .then(res => {
+                if (res.data === "exist") {
+                    history("/home", { state: { id: email } });
+                } else if (res.data === "notexist") {
+                    alert("User has not signed up");
+                }
+            })
+            .catch(e => {
+                alert("Wrong details");
+                console.log(e);
+            });
     } catch (e) {
         console.log(e);
-    }
-  }
+    }}
+    
 
   return (
     <div className='container'>
@@ -56,8 +63,7 @@ const Login = () => {
                   name=''
                   id=''
               />
-              <button type='submit' onClick={submit}>Login</button>
-        {/* <button onClick={submit}>Login</button> */}
+        <button onClick={submit}>Login</button>
       </form>
       <div className='or-divider'>
         <p>OR</p>
