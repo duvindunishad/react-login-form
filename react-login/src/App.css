@@ -52,6 +52,7 @@ body {
   border: 1px solid #fff;
   border-radius: 20px;
   cursor: pointer;
+  
 }
 
 .signup-form button:hover {
@@ -176,11 +177,15 @@ body {
   border: 1px solid #fff;
   border-radius: 20px;
   cursor: pointer;
+  margin-left:20%;
 }
 .homepage button:hover {
-  background-color: #00001a;}
+  background-color: #007ad8;
+}
 .homepage h1{
   color: #fff;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 /* footer */
 

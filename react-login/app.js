@@ -11,10 +11,10 @@ app.get("/",cors(),(req,res)=>{
 })
 
 app.post("/",async(req,res)=>{
-    const{email,password} = req.body
+    const{name,email,password} = req.body
 
     try {
-        const check=await collection.findOne({email:email})
+        const check=await collection.findOne({ name:name, email:email ,password:password})
         if(check){
             res.json("exist")
         }
@@ -28,9 +28,9 @@ app.post("/",async(req,res)=>{
 
 // signup
 app.post("/signup",async(req,res)=>{
-    const{email,password} = req.body
+    const{name,email,password} = req.body
 
-    const data={email:email,password:password}
+    const data={name:name,email:email,password:password}
     try {
         const check=await collection.findOne({email:email})
         if(check){

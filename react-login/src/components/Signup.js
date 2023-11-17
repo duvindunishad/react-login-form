@@ -7,16 +7,17 @@ import Navbar from './Navbar';
 
   const Signup = () => {
   const history = useNavigate();
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   async function submit(e) {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8000/signup", { email, password });
+      const res = await axios.post("http://localhost:8000/signup", { name, email, password });
 
-      if (!email || !password) {
-        alert("Please Enter Email & Password.");
+      if (!name || !email || !password) {
+        alert("Please Enter Name, Email & Password.");
         return; // Stop execution if email or password are missing
     }
       else if (res.data === "exist") {
@@ -37,6 +38,13 @@ import Navbar from './Navbar';
     <div className='signup-container'>
       <h1>Signup</h1>
       <form action="POST" className='signup-form'>
+      <input
+          type='name'
+          onChange={(e) => setName(e.target.value)}
+          placeholder='Name'
+          name=''
+          id=''
+        />
         <input
           type='email'
           onChange={(e) => setEmail(e.target.value)}

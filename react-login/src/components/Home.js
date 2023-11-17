@@ -14,7 +14,8 @@ const Home = () => {
       };
   return (
     <div className='homepage'>
-      <h1>Hello {location.state.id} and welcome to the home</h1>
+      <h1>Hello {location.state.name} and welcome to the home</h1>
+      <h1>Email:  {location.state.email}</h1>
       <button type='submit' onClick={handleLogout}>Logout</button>
 
     </div>

@@ -8,33 +8,38 @@ import Navbar from './Navbar';
 const Login = () => {
 
     const history=useNavigate();
+    const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
 
   async function submit(e){
     e.preventDefault();
     try {
-        if (!email || !password) {
+        if ( !email || !password) {
             alert("Email and password are required.");
             return; // Stop execution if email or password are missing
         }
-    
+       
         // Add email and password to the request
-        const data = { email, password };
+        const data = { name, email, password };
     
         await axios.post("http://localhost:8000/", data)
             .then(res => {
                 if (res.data === "exist") {
-                    history("/home", { state: { id: email } });
+                    history("/home", { state: { name: name , email:email } });
                 } else if (res.data === "notexist") {
-                    alert("User has not signed up");
+                    alert("User has not signed up");              
+                        
                 }
+                                
             })
             .catch(e => {
                 alert("Wrong details");
                 console.log(e);
             });
     } catch (e) {
+        alert("Login Failed");
         console.log(e);
     }}
     
@@ -45,6 +50,16 @@ const Login = () => {
     <div className='login-container'>
       <h1>Login</h1>
       <form action="POST" className='login-form'>
+
+      <input
+                  type='name'
+                  onChange={(e) => {
+                      setName(e.target.value);
+                  }}
+                  placeholder='Name'
+                  name=''
+                  id=''
+              />
               <input
                   type='email'
                   onChange={(e) => {
@@ -76,3 +91,5 @@ const Login = () => {
 };
 
 export default Login;
+
+
