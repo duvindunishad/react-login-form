@@ -1,16 +1,16 @@
 const express = require('express');
 const collection = require("./mongo")
 const cors = require('cors')    
-const app = express()
-app.use(express.json())
-app.use(express.urlencoded({extended:true}))
-app.use(cors())
+const backend = express()
+backend.use(express.json())
+backend.use(express.urlencoded({extended:true}))
+backend.use(cors())
 
-app.get("/",cors(),(req,res)=>{
+backend.get("/",cors(),(req,res)=>{
 
 })
 
-app.post("/",async(req,res)=>{
+backend.post("/",async(req,res)=>{
     const{name,email,password} = req.body
 
     try {
@@ -27,7 +27,7 @@ app.post("/",async(req,res)=>{
 })
 
 // signup
-app.post("/signup",async(req,res)=>{
+backend.post("/signup",async(req,res)=>{
     const{name,email,password} = req.body
 
     const data={name:name,email:email,password:password}
@@ -45,6 +45,6 @@ app.post("/signup",async(req,res)=>{
     }
 })
 
-app.listen(8000,()=>{
+backend.listen(8000,()=>{
     console.log("port connected")
 })

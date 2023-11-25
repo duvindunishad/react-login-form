@@ -17,7 +17,7 @@ const Login = () => {
     e.preventDefault();
     try {
         if ( !email || !password) {
-            alert("Email and password are required.");
+            alert("User Name, Email and password are required.");
             return; // Stop execution if email or password are missing
         }
        
