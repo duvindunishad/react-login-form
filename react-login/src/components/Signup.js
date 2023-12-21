@@ -36,7 +36,7 @@ import Navbar from './Navbar';
     
     <div className='container'><Navbar/>
     <div className='signup-container'>
-      <h1>Signup</h1>
+      <h1>SignUp</h1>
       <form action="POST" className='signup-form'>
       <input
           type='name'

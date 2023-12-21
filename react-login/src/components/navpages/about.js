@@ -6,7 +6,9 @@ const about = () => {
   return (
     <div>
         <div className='container'><Navbar/>
-      <h1>About page</h1>
+        <div className='card-container'>
+        <h1>About page</h1>
+        </div>
       <Footer/>
     </div></div>
   )

@@ -3,7 +3,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-image: url('9.jpg');
+  background-image: url('6.png');
   background-size: cover;
   background-position: center;
   margin: 0; /* Remove default margin */
@@ -47,16 +47,19 @@ body {
 .signup-form button {
   width: 100%;
   padding: 10px;
-  background-color: #00004d;
+  background-color: #020909;
   color: white;
   border: 1px solid #fff;
   border-radius: 20px;
   cursor: pointer;
-  
+  margin-top: 20px;
+  font-size: large;
+  font-weight: bold;
 }
 
 .signup-form button:hover {
-  background-color: #00001a;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
 }
 
 .or-divider {
@@ -100,21 +103,24 @@ body {
   background: transparent;
   color: #fff;
 
-  
 }
 
 .login-form button {
   width: 100%;
   padding: 10px;
-  background-color: #00004d;
+  background-color: #020909;
   color: white;
   border: 1px solid #fff;
   border-radius: 20px;
   cursor: pointer;
+  margin-top: 20px;
+  font-size: large;
+  font-weight: bold;
 }
 
 .login-form button:hover {
-  background-color: #00001a;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
 }
 
 .or-divider {
@@ -172,21 +178,34 @@ body {
 .homepage button {
   width: 50%;
   padding: 10px;
-  background-color: #00004d;
+  background-color: #020909;
   color: white;
   border: 1px solid #fff;
   border-radius: 20px;
   cursor: pointer;
   margin-left:20%;
+  margin-top: 20px;
+  font-size: large;
+  font-weight: bold;
 }
 .homepage button:hover {
-  background-color: #007ad8;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
 }
 .homepage h1{
   color: #fff;
   margin-left: 20%;
   margin-right: 20%;
   text-wrap: balance;
+}
+.card-container-homepage{
+    max-width: auto;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);  
 }
 /* footer */
 
@@ -197,7 +216,7 @@ body {
   color: #fff;
   padding: 10px 0;
   text-align: center;
-  background-color: rgb(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
 }
 
@@ -216,7 +235,7 @@ body {
   left: 1;
   width: 100%;
   padding: 20px 100px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
 }
 
@@ -239,3 +258,18 @@ body {
 .nav-item a:hover {
   text-decoration: underline;
 }
+
+/* about/contact/blog */
+.card-container{
+  max-width: auto;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid #ccc;
+  background: transparent;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+/* home */

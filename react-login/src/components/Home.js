@@ -14,10 +14,11 @@ const Home = () => {
       };
   return (
     <div className='homepage'>
-      <h1>Hello {location.state.name} and welcome to the home</h1>
+                  <div className='card-container-homepage'>
+      <h1>Hello {location.state.name} and welcome to the home page</h1>
       <h1>Email:  {location.state.email}</h1>
       <button type='submit' onClick={handleLogout}>Logout</button>
-
+</div>
     </div>
   )
 }
